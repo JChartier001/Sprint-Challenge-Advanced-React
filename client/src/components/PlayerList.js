@@ -23,17 +23,11 @@ class PlayerList extends React.Component {
         console.log("rendered");
         console.log("state", this.state)
         return(        
-                <div className="player-list">
+                <div className="list">
                     <PlayerCard player={this.state.player}/>
-                    {/* 
-                     */}
-               
                 </div>
              );
-             }   
-      
-
-    
+        }   
 }
     
 export default PlayerList;

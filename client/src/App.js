@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayerList from "./PlayerLIst"
+import PlayerList from "./PlayerList"
 import './App.css';
 
 function App() {

@@ -24,7 +24,9 @@ class PlayerList extends React.Component {
         console.log("state", this.state)
         return(        
                 <div className="player-list">
-                    {this.player !==0 ? <PlayerCard player={this.state.player}/> : null }
+                    <PlayerCard player={this.state.player}/>
+                    {/* 
+                     */}
                
                 </div>
              );

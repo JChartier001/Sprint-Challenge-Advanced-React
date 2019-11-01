@@ -1,22 +1,25 @@
 import React from 'react';
-import {render} from "@testing-library/react";
-import App from './App';
+import {render, fireEvent} from "@testing-library/react";
+import App, {sum} from './App';
+import PlayerCard from "./components/PlayerCard";
+import PlayerList from "./components/PlayerList"
 
-
-test('renders without crashing', () => {
-  const {getAllByText} = render(<App />);
-  getAllByText(/strike/i)
-  
+test('it returns the sum of two numbers', () =>{
+  expect(sum(2,2)).toBe(4);
 });
 
 test('renders without crashing', () => {
-  const {getAllByText} = render(<App />);
-  getAllByText(/ball/i)
-  
+  render(<App />);
 });
 
-test('renders without crashing', () => {
-  const {getByText} = render(<App />);
-  getByText(/foul/i)
-  
-});
+
+test('Loads Component', () =>{
+  const {queryAllByText} = render(<PlayerCard />)
+  queryAllByText(/name/i);
+})
+
+
+test('Loads Component', () =>{
+   render(<PlayerList />); })
+   
+ 

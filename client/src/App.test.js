@@ -1,9 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import {render, fireEvent} from "@testing-library/react";
+import App, {sum} from './App';
+import PlayerCard from "./components/PlayerCard";
+import PlayerList from "./components/PlayerList"
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test('it returns the sum of two numbers', () =>{
+  expect(sum(2,2)).toBe(4);
 });
+
+test('renders without crashing', () => {
+  render(<App />);
+});
+
+
+test('Loads Component', () =>{
+  const {queryAllByText} = render(<PlayerCard />)
+  queryAllByText(/name/i);
+})
+
+
+test('Loads Component', () =>{
+   render(<PlayerList />); })
+   
+ 
